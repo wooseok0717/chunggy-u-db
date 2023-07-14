@@ -11,5 +11,10 @@ module.exports = {
     models.users.createAUser(ign, job, currentUser, () => {
       res.send('created!');
     })
+  },
+  getUsers: (req, res) => {
+    models.users.getAllUsers((data) => {
+      res.send(data)
+    })
   }
 }

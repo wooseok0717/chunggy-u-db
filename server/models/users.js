@@ -10,5 +10,11 @@ module.exports = {
     const values = [ign, job, currentUser, 'user'];
     db.query(text, values)
     .then(cb);
+  },
+  getAllUsers: (cb) => {
+    db.query('SELECT * FROM users ORDER BY name ASC')
+    .then(res => {
+      cb(res.rows);
+    })
   }
 }
