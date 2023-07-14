@@ -16,5 +16,11 @@ module.exports = {
     models.users.getAllUsers((data) => {
       res.send(data)
     })
+  },
+  updateRole: (req,res) => {
+    const {id, role} = req.body;
+    models.users.updateRole(id, role, () => {
+      res.send('created');
+    })
   }
 }
