@@ -18,7 +18,6 @@ module.exports = {
     })
   },
   updateRole: (id, role, cb) => {
-    console.log(id, role);
     const text = 'UPDATE users SET role = $1 WHERE id = $2';
     const values = [role, id]
     db.query(text, values);
